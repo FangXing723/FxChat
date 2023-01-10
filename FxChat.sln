@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FxChat.App.Server", "FxChat
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FxChat.Domain", "FxChat.Domain\FxChat.Domain.csproj", "{48C98AB2-840A-4243-93DE-1C09C83CAD97}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FxChat.Domain.Shared", "FxChat.Domain.Shared\FxChat.Domain.Shared.csproj", "{6FD98E78-EA56-4AEE-B380-EDE6810ADA34}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{48C98AB2-840A-4243-93DE-1C09C83CAD97}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{48C98AB2-840A-4243-93DE-1C09C83CAD97}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{48C98AB2-840A-4243-93DE-1C09C83CAD97}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6FD98E78-EA56-4AEE-B380-EDE6810ADA34}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6FD98E78-EA56-4AEE-B380-EDE6810ADA34}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6FD98E78-EA56-4AEE-B380-EDE6810ADA34}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6FD98E78-EA56-4AEE-B380-EDE6810ADA34}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
