@@ -14,7 +14,7 @@ namespace FxChat.App.Server
         public static SocketHelper Intanter = new SocketHelper();
         public Dictionary<string, Socket> dicScoket = new Dictionary<string, Socket>();
         public List<string> IPItem = new List<string>();
-
+         
         public object ImageFormat { get; private set; }
 
         //消息类型枚举
