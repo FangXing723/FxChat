@@ -13,4 +13,8 @@
     <PackageReference Include="Prism.Wpf" Version="8.1.97" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\FxChat.Domain\FxChat.Domain.csproj" />
+  </ItemGroup>
+
 </Project>

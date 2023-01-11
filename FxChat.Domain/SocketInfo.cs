@@ -9,7 +9,7 @@ namespace FxChat.Domain
 {
     public class SocketInfo
     {
-        public Guid Id;
-        public Socket Socket{ get; set; }
+        public string Id => (Socket == null) ? "" : Socket.RemoteEndPoint.ToString();
+        public Socket Socket { get; set; }
     }
 }

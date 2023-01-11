@@ -13,7 +13,7 @@ namespace FxChat.App.Client
     {
         protected override Window CreateShell()
         {
-            return Container.Resolve<MainView>();
+            return Container.Resolve<ClientMainView>();
         }
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)

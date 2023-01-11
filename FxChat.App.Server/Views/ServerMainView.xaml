@@ -1,0 +1,95 @@
+﻿<Window
+    x:Class="FxChat.App.Server.Views.ServerMainView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:domain="clr-namespace:FxChat.Domain;assembly=FxChat.Domain"
+    xmlns:local="clr-namespace:FxChat.App.Server.Views"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:prism="http://prismlibrary.com/"
+    xmlns:socket="clr-namespace:System.Net.Sockets;assembly=System.Net.Primitives"
+    Title="Socket Server"
+    Width="800"
+    Height="450"
+    prism:ViewModelLocator.AutoWireViewModel="True"
+    mc:Ignorable="d">
+    <Window.Resources>
+        <HierarchicalDataTemplate DataType="{x:Type domain:Message}">
+            <StackPanel Orientation="Horizontal">
+                <Label Margin="5,0,0,0" Content="{Binding Time}" />
+                <Label Margin="5,0,0,0" Content="{Binding EndPointType}" />
+                <Label Margin="5,0,0,0" Content="{Binding EndPoint}" />
+                <TextBlock
+                    Margin="5,0,0,0"
+                    VerticalAlignment="Center"
+                    Text="{Binding Content}" />
+            </StackPanel>
+        </HierarchicalDataTemplate>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="2*" />
+            <RowDefinition Height="3*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <StackPanel
+            Grid.Row="0"
+            Margin="5"
+            Orientation="Horizontal">
+            <Label>Ip:</Label>
+            <TextBox Width="200" Text="{Binding ServerIp}" />
+            <Label Margin="10,0,0,0">Port:</Label>
+            <TextBox Width="200" Text="{Binding ServerPort}" />
+
+            <Button Margin="10,0,0,0" Command="{Binding StartServerCommand}">启用Socket服务</Button>
+            <Button Margin="10,0,0,0" Command="{Binding StopServerCommand}">停止Socket服务</Button>
+            <TextBlock
+                Margin="10,0,0,0"
+                VerticalAlignment="Center"
+                Text="{Binding State}"
+                TextAlignment="Center" />
+
+        </StackPanel>
+
+        <ListView
+            Grid.Row="1"
+            Margin="5"
+            ItemsSource="{Binding ConnectedSockets}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <Label Content="{Binding RemoteEndPoint}" />
+                    </Grid>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+        <ListView
+            Grid.Row="2"
+            Margin="5"
+            ItemsSource="{Binding Messages}" />
+
+        <Grid Grid.Row="3" Margin="5">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition Width="auto" />
+            </Grid.ColumnDefinitions>
+            <TextBox Height="40" Text="{Binding InputMessage}" />
+            <Button
+                Grid.Column="1"
+                Width="100"
+                Height="40"
+                Margin="5,0,0,0"
+                Command="{Binding SendMessageCommand}"
+                Content="发送" />
+        </Grid>
+
+    </Grid>
+</Window>

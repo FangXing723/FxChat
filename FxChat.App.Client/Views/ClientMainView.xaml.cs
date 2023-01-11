@@ -17,9 +17,9 @@ namespace FxChat.App.Client.Views
     /// <summary>
     /// MainView.xaml 的交互逻辑
     /// </summary>
-    public partial class MainView : Window
+    public partial class ClientMainView : Window
     {
-        public MainView()
+        public ClientMainView()
         {
             InitializeComponent();
         }
